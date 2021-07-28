@@ -5,6 +5,7 @@ export default class Component {
     constructor($target) {
         this.$target = $target;
         this.setup();
+        this.setEvent(); // Event Lifecycle 변경(생성자 호출 시 한번만 동작하게)
         this.render();
     }
 
@@ -14,7 +15,6 @@ export default class Component {
 
     render() {
         this.$target.innerHTML = this.template();
-        this.setEvent();
     }
 
     setState(newState) {
